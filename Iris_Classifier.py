@@ -21,7 +21,7 @@ print(dataset.shape)
 
 
 #dataset.head(k) ->prints first k training examples
- print(dataset.head(20))
+#print(dataset.head(20))
 
 
 # #detailed description of dataset
@@ -29,7 +29,7 @@ print(dataset.shape)
 
 
 # class distribution
- print(dataset.groupby('class').size())
+print(dataset.groupby('class').size())
 
 
 # histograms
@@ -59,7 +59,7 @@ models.append(('SVM',SVC()))
 
 
 #evaluate each model in turn
-results = []
+''' results = []
 names = []
 for name, model in models:
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
@@ -69,8 +69,10 @@ for name, model in models:
     msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
     print(msg)
 
-
+'''
 # Make predictions on validation dataset
+
+
 lr = LogisticRegression()
 lr.fit(X_train,Y_train);
 predictions = lr.predict(X_validation)
